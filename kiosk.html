@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}
+<h1>Attendance kiosk</h1><section class="panel"><div class="row"><label>Subject<input id="subject" placeholder="e.g. Engineering Mathematics"></label><button id="startSession">Start session</button><button id="endSession" class="danger" disabled>End session</button></div>
+<div class="row"><span id="network" class="badge">Checking connection…</span><span>Pending sync: <b id="pending">0</b></span><button id="syncNow" class="secondary">Sync Now</button></div></section>
+<section class="kiosk-layout"><div class="panel"><div class="camera-wrap kiosk-camera"><video id="kioskVideo" autoplay muted playsinline></video></div><div class="row"><span>Present: <b id="presentCount">0</b> / <b id="totalCount">0</b></span><span id="sessionLabel">No active session</span></div></div>
+<div id="recognition" class="recognition neutral"><strong>Ready</strong><span>Start a session and look at the camera.</span></div></section>
+<p id="kioskStatus" class="notice"></p>
+{% endblock %}

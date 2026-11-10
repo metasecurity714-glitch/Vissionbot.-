@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block content %}
+<h1>Students & face enrollment</h1>
+<section class="panel"><h2>Add student</h2><form id="studentForm" class="formgrid">
+<label>Full name<input name="name" required></label><label>Roll number<input name="roll_no" required></label>
+<label>Department<input name="department" required></label><button>Add student</button></form></section>
+<section class="panel"><h2>Face capture</h2><p>Capture five samples with small changes in head angle. Face images are not retained except for one small profile thumbnail.</p>
+<label class="consent"><input type="checkbox" id="consent"> This person agrees to their face data being stored on this device.</label>
+<div class="camera-wrap"><video id="enrollVideo" autoplay muted playsinline></video><canvas id="enrollCanvas" hidden></canvas></div>
+<div class="actions"><select id="enrollStudent"><option value="">Choose student</option></select><button id="cameraStart">Open camera</button><button id="captureFace" disabled>Capture sample (0/5)</button><button id="stopCamera" class="secondary">Stop camera</button></div><p id="enrollStatus" class="notice">Select a student and accept consent before capturing.</p></section>
+<section class="panel"><h2>Student list</h2><div id="studentList"></div></section>
+<section class="panel danger-zone"><h2>Settings</h2><p>Remove all stored face descriptors and profile thumbnails. Student records and attendance remain.</p><button id="deleteFaces" class="danger">Delete all face data</button></section>
+{% endblock %}
